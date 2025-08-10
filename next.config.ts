@@ -3,7 +3,7 @@ import path from 'path';
 
 const nextConfig: NextConfig = {
   sassOptions: {
-    includePaths: [path.join(__dirname, 'app', 'globals.scss')]
+    includePaths: [path.join(__dirname, 'app', 'globals.css')]
   },
   reactStrictMode: true,
   poweredByHeader: false,
