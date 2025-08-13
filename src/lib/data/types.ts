@@ -20,3 +20,8 @@ export type Job = {
   stack: string[];
   achievements: string[];
 };
+export type Tag = {
+  label: string;
+  pos: string;
+  scale?: string;
+}

@@ -1,4 +1,4 @@
-import { Header } from '@/components/sections/header/header'
+import { Header } from '@/components/sections/header/Header'
 import { Main } from '@/components/sections/main/main'
 
 export default function Home() {
