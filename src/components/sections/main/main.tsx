@@ -3,7 +3,7 @@ import { Hero } from './hero/hero'
 
 export function Main() {
 	return (
-		<main>
+		<main className='flex flex-col gap-10'>
 			<Hero />
 			<About />
 		</main>
