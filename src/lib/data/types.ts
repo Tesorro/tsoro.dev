@@ -24,4 +24,5 @@ export type Tag = {
   label: string;
   pos: string;
   scale?: string;
+  dir?: 'left' | 'right' | 'top' | 'bottom'
 }
