@@ -60,7 +60,7 @@ export function Hero() {
 	}
 
 	return (
-		<motion.div
+		<motion.section
 			variants={container}
 			initial='hidden'
 			whileInView='show'
@@ -104,6 +104,6 @@ export function Hero() {
 				</ButtonLink>
 				<ButtonLink href='#projects'>View My Work</ButtonLink>
 			</motion.div>
-		</motion.div>
+		</motion.section>
 	)
 }

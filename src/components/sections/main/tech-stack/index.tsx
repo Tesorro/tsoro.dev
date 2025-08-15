@@ -45,13 +45,13 @@ export function TechStack() {
 	)
 
 	return (
-		<div className='max-w-9xl mx-auto flex w-full flex-col gap-6'>
+		<section className='max-w-9xl mx-auto flex w-full flex-col gap-6'>
 			<motion.div
 				initial='hidden'
 				whileInView='show'
 				viewport={{ once: true, amount: 0.2 }}
 				variants={headingFromBottom}
-				className='mb-13 flex flex-col items-center'
+				className='mb-8 flex flex-col items-center'
 			>
 				<SectionHeading
 					title='Tech Stack & Tools I Use'
@@ -95,6 +95,6 @@ export function TechStack() {
 					{ src: '/images/techs/postman.png', alt: 'Postman', label: 'Postman' }
 				]}
 			/>
-		</div>
+		</section>
 	)
 }
