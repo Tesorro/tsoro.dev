@@ -112,6 +112,29 @@ html {
 	.border-grey {
 		@apply border-[0.5px] border-solid border-[#ffffff1a];
 	}
+	.card-gradient {
+		position: relative;
+		z-index: 0;
+	}
+	.card-gradient::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		border-radius: inherit;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.5s ease;
+		background: linear-gradient(to bottom right, #ffffff26, #4c51bf33);
+		z-index: -1;
+	}
+
+	.dark .card-gradient::before {
+		background: linear-gradient(to bottom right, #0b0b0be6, #4c51bf4d);
+	}
+
+	.card-gradient:hover::before {
+		opacity: 1;
+	}
 }
 
 @layer utilities {

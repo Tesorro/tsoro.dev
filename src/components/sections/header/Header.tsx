@@ -7,7 +7,7 @@ interface Props {}
 
 export function Header({}: Props) {
 	return (
-		<header className='max-w-9xl mx-auto w-full px-20 pt-8 pb-19'>
+		<header className='max-w-9xl mx-auto w-full px-40 pt-8 pb-19'>
 			<div className='flex items-center justify-between'>
 				<SiteLogo />
 				<Navigation />

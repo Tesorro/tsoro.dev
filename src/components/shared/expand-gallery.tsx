@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
+import { Card, CardTitle } from '@/ui/card'
+
 type Item = { src: string; alt: string; label?: string }
 
 export function ExpandGallery({ items }: { items: Item[] }) {
@@ -20,13 +22,12 @@ export function ExpandGallery({ items }: { items: Item[] }) {
 				const widthPx = isActive ? 936 : 312
 
 				return (
-					<button
+					<Card
 						key={it.src}
-						type='button'
 						role='listitem'
 						onMouseEnter={() => setActive(i)}
 						onFocus={() => setActive(i)}
-						className='group relative overflow-hidden rounded-2xl transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus:ring-2 focus:ring-indigo-500/60 focus:outline-none'
+						className='group relative overflow-hidden rounded-2xl border-none transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus:ring-2 focus:ring-indigo-500/60 focus:outline-none'
 						style={{ width: widthPx, height: 400 }}
 					>
 						<Image
@@ -43,13 +44,13 @@ export function ExpandGallery({ items }: { items: Item[] }) {
 						/>
 
 						{it.label && (
-							<div
+							<CardTitle
 								className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-all duration-800 ${isActive ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'} `}
 							>
 								<span className='rounded-lg text-[48px] font-normal text-white'>{it.label}</span>
-							</div>
+							</CardTitle>
 						)}
-					</button>
+					</Card>
 				)
 			})}
 		</div>
