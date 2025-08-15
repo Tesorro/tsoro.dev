@@ -57,19 +57,35 @@ const projects = {
 	}
 }
 
+const containerVariants = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.15
+		}
+	}
+}
+
+const cardVariants = {
+	hidden: { opacity: 0, y: 40 },
+	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+}
+
 export function ProjectsCarousel() {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 50 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, ease: 'easeOut' }}
-			viewport={{ once: true, amount: 0.2 }} // amount = сколько % блока должно быть видно
+			variants={containerVariants}
+			initial='hidden'
+			whileInView='show'
+			viewport={{ once: true, amount: 0.2 }}
 		>
 			<Carousel className='w-full'>
 				<CarouselContent>
 					{Object.entries(projects).map(([key, { title, description, images, techs }]) => (
-						<CarouselItem
+						<motion.div
 							key={key}
+							variants={cardVariants}
 							className='md:basis-1/2 lg:basis-1/3'
 						>
 							<div className='p-1'>
@@ -95,7 +111,7 @@ export function ProjectsCarousel() {
 									</CardFooter>
 								</Card>
 							</div>
-						</CarouselItem>
+						</motion.div>
 					))}
 				</CarouselContent>
 
