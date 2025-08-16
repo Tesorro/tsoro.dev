@@ -23,7 +23,7 @@ const techs: Tag[] = [
 		dir: 'right'
 	},
 	{
-		label: 'Perfomance',
+		label: 'Performance',
 		pos: 'top-[35%] left-[25%] md:top-[35%] md:left-[40%]',
 		scale: 'scale-110 z-30',
 		dir: 'left'
@@ -82,7 +82,7 @@ export function Hero() {
 
 				<Tags
 					elements={techs}
-					className='mx-auto h-60 w-[57%]'
+					className='mx-auto h-70 w-[57%]'
 				/>
 			</div>
 			<motion.p
