@@ -1,5 +1,6 @@
 import { Hero } from './hero'
 import { Portfolio } from './portfolio'
+import { ProfessionalJourney } from './professional-journey'
 import { Skills } from './skills'
 import { TechStack } from './tech-stack'
 
@@ -10,6 +11,7 @@ export function Main() {
 			<TechStack />
 			<Skills />
 			<Portfolio />
+			<ProfessionalJourney />
 		</main>
 	)
 }
