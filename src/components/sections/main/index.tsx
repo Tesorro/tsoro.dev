@@ -1,3 +1,4 @@
+import { Contacts } from './contacts'
 import { Hero } from './hero'
 import { Portfolio } from './portfolio'
 import { ProfessionalJourney } from './professional-journey'
@@ -12,6 +13,7 @@ export function Main() {
 			<Skills />
 			<Portfolio />
 			<ProfessionalJourney />
+			<Contacts />
 		</main>
 	)
 }
