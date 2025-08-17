@@ -19,7 +19,8 @@
 		"prisma:seed": "tsx ./prisma/seed.ts",
 		"prisma:setup": "prisma generate && prisma migrate deploy && prisma db push",
 		"prisma:studio": "npx prisma studio",
-		"prisma:wipe": "npx prisma migrate reset --force && npx prisma db push"
+		"prisma:wipe": "npx prisma migrate reset --force && npx prisma db push",
+		"optimize-images": "node scripts/optimize-images.js"
 	},
 	"dependencies": {
 		"@prisma/client": "^6.13.0",
@@ -37,6 +38,7 @@
 		"react-dom": "19.1.0",
 		"react-hot-toast": "^2.5.2",
 		"sass": "^1.90.0",
+		"sharp": "^0.34.3",
 		"tailwind-merge": "^3.3.1"
 	},
 	"devDependencies": {
