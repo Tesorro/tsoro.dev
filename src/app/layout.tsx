@@ -27,7 +27,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<body
-				className={`${rubik.className} min-h-screen bg-[url('/images/backgrounds/Vector-12-1.png')] bg-center bg-top bg-no-repeat`}
+				className={`${rubik.className} min-h-screen bg-[url('/images/backgrounds/Vector-12-1.png')] bg-[60%_2%] bg-no-repeat`}
 			>
 				<ThemeProvider
 					attribute={'class'}

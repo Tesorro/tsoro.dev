@@ -14,8 +14,10 @@ export function ButtonLink({
 	const baseStyles = 'border-grey flex w-fit rounded-2xl px-6 py-3.5 transition-colors duration-500'
 
 	const variants = {
-		primary: 'bg-accent button-shadow text-accent-foreground hover:bg-muted hover:text-foreground',
-		secondary: 'bg-muted text-foreground hover:bg-accent hover:text-accent-foreground'
+		primary:
+			'dark:bg-accent button-shadow bg-[#4c51be] hover:bg-transparent hover:text-foreground text-accent dark:text-accent-foreground dark:hover:bg-muted dark:hover:text-foreground',
+		secondary:
+			'dark:bg-muted hover:bg-[#4c51be] button-shadow hover:text-accent dark:text-foreground dark:hover:bg-accent dark:hover:text-accent-foreground'
 	}
 
 	return (

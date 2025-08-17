@@ -10,7 +10,6 @@ export function Main() {
 		<main className='flex flex-col gap-20 px-40'>
 			<Hero />
 			<TechStack />
-			<Skills />
 			<Portfolio />
 			<ProfessionalJourney />
 			<Contacts />

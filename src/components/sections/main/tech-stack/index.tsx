@@ -6,6 +6,8 @@ import { ExpandGallery } from '@/components/shared/expand-gallery'
 import { IconLabel } from '@/components/shared/icon-label'
 import { SectionHeading } from '@/components/shared/section-heading'
 
+import { TechCarousel } from './components/tech-carousel'
+
 export function TechStack() {
 	const prefersReduced = useReducedMotion()
 
@@ -45,7 +47,7 @@ export function TechStack() {
 	)
 
 	return (
-		<section className='max-w-9xl mx-auto flex w-full flex-col gap-6'>
+		<section className="max-w-9xl mx-auto flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:112%] bg-[55%_55%] bg-no-repeat">
 			<motion.div
 				initial='hidden'
 				whileInView='show'
@@ -56,7 +58,7 @@ export function TechStack() {
 				<SectionHeading
 					title='Tech Stack & Tools I Use'
 					subtitle="The tech landscape never stands still, and neither do I. These are the technologies I'm
-					currently most excited about and proficient with:"
+					currently most excited about and proficient with"
 				/>
 			</motion.div>
 
@@ -64,7 +66,7 @@ export function TechStack() {
 				label='Frontend'
 				items={[
 					{ src: '/images/techs/html5.jpg', alt: 'HTML5', label: 'HTML5' },
-					{ src: '/images/techs/react.jpeg', alt: 'ReactJS', label: 'ReactJS' },
+					{ src: '/images/techs/react.png', alt: 'ReactJS', label: 'ReactJS' },
 					{ src: '/images/techs/nextjs.png', alt: 'NextJS', label: 'NextJS' }
 				]}
 			/>
@@ -73,7 +75,7 @@ export function TechStack() {
 				label='Backend'
 				items={[
 					{ src: '/images/techs/nodejs.png', alt: 'NodeJS', label: 'NodeJS' },
-					{ src: '/images/techs/postgresql.jpg', alt: 'PostgreSQL', label: 'PostgreSQL' },
+					{ src: '/images/techs/postgresql.png', alt: 'PostgreSQL', label: 'PostgreSQL' },
 					{ src: '/images/techs/nestjs.jpg', alt: 'NestJS', label: 'NestJS' }
 				]}
 			/>
@@ -81,7 +83,7 @@ export function TechStack() {
 			<Row
 				label='DevOps'
 				items={[
-					{ src: '/images/techs/github.jpg', alt: 'GitHub', label: 'GitHub' },
+					{ src: '/images/techs/github.png', alt: 'GitHub', label: 'GitHub' },
 					{ src: '/images/techs/jenkins.png', alt: 'Jenkins', label: 'Jenkins' },
 					{ src: '/images/techs/docker.webp', alt: 'Docker', label: 'Docker' }
 				]}
@@ -95,6 +97,7 @@ export function TechStack() {
 					{ src: '/images/techs/postman.png', alt: 'Postman', label: 'Postman' }
 				]}
 			/>
+			<TechCarousel />
 		</section>
 	)
 }

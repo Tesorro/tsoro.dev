@@ -14,7 +14,7 @@ export function IconLabel({ text, className }: IconLabelProps) {
 				className
 			)}
 		>
-			<span className='rounded bg-[#7a7d9b] p-1.5'>
+			<span className='bg-muted rounded p-1.5 dark:bg-[#7a7d9b]'>
 				<Zap size={16} />
 			</span>
 			<span>{text}</span>

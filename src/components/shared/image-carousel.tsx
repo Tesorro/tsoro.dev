@@ -42,7 +42,7 @@ export function ImageCarousel({ images }: IProps) {
 		<div className='relative h-80'>
 			<Carousel
 				setApi={setCarouselApi}
-				opts={{ loop: true }}
+				opts={{ loop: true, watchDrag: false }}
 				className='z-10 h-80 w-full'
 			>
 				<CarouselContent>
@@ -67,20 +67,20 @@ export function ImageCarousel({ images }: IProps) {
 			<div className='pointer-events-none absolute inset-0 z-20 flex items-center justify-between px-1'>
 				<Button
 					onClick={() => scrollToIndex(currentIndex - 1)}
-					className='pointer-events-auto h-10 w-10 cursor-pointer rounded-full bg-transparent p-0 shadow-none hover:bg-transparent'
+					className='pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-black/40 p-0 shadow-none transition-colors hover:bg-black/60'
 				>
 					<ChevronLeft
-						className='size-10'
-						strokeWidth={1.5}
+						className='size-6 text-white'
+						strokeWidth={2}
 					/>
 				</Button>
 				<Button
 					onClick={() => scrollToIndex(currentIndex + 1)}
-					className='pointer-events-auto h-10 w-10 cursor-pointer rounded-full bg-transparent p-0 shadow-none hover:bg-transparent'
+					className='pointer-events-auto flex h-10 w-10 items-center justify-center rounded-full bg-black/40 p-0 shadow-none transition-colors hover:bg-black/60'
 				>
 					<ChevronRight
-						className='size-10'
-						strokeWidth={1.5}
+						className='size-6 text-white'
+						strokeWidth={2}
 					/>
 				</Button>
 			</div>
