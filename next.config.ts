@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60, 
+    dangerouslyAllowSVG: false,
+  },
   // async rewrites() {
   //   return [
   //     {
