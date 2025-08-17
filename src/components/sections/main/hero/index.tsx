@@ -66,6 +66,7 @@ export function Hero() {
 			whileInView='show'
 			viewport={{ once: true, amount: 0.35 }}
 			className='max-w-9xl mx-auto flex w-full flex-col gap-20 will-change-transform'
+			id='about'
 		>
 			<motion.div
 				variants={fromBottom}
@@ -87,7 +88,7 @@ export function Hero() {
 			</div>
 			<motion.p
 				variants={fromBottom}
-				className='mx-auto w-fit rounded-md bg-[#FFFFFF1A] px-4 py-1 text-lg text-emerald-400'
+				className='bg-muted mx-auto w-fit rounded-md px-4 py-1 text-lg text-emerald-400 dark:bg-[#FFFFFF1A]'
 			>
 				const me = "Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js Dev"
 			</motion.p>
@@ -102,7 +103,7 @@ export function Hero() {
 				>
 					Download Resume
 				</ButtonLink>
-				<ButtonLink href='#projects'>View My Work</ButtonLink>
+				<ButtonLink href='#portfolio'>View My Work</ButtonLink>
 			</motion.div>
 		</motion.section>
 	)

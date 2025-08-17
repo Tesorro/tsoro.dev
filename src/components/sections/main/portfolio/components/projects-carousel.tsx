@@ -80,15 +80,22 @@ export function ProjectsCarousel() {
 			whileInView='show'
 			viewport={{ once: true, amount: 0.2 }}
 		>
-			<Carousel className='w-full'>
-				<CarouselContent>
+			<Carousel
+				className='w-full'
+				opts={{ loop: true }}
+			>
+				<CarouselContent className='px-2'>
+					{' '}
+					{/* фикс вместо -ml-2 */}
 					{Object.entries(projects).map(([key, { title, description, images, techs }]) => (
 						<motion.div
 							key={key}
 							variants={cardVariants}
 							className='md:basis-1/2 lg:basis-1/3'
 						>
-							<div className='p-1'>
+							<div className='p-2'>
+								{' '}
+								{/* вместо p-1, чтобы компенсировать px-2 сверху */}
 								<Card className='group card-gradient border-grey relative overflow-hidden rounded-2xl bg-transparent p-5 transition-shadow duration-500 hover:shadow-lg'>
 									<ImageCarousel images={images} />
 

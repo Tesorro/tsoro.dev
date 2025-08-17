@@ -16,7 +16,7 @@ export function Portfolio() {
 	return (
 		<section
 			id='portfolio'
-			className="max-w-9xl mx-auto flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:120%] bg-[190%_12%] bg-no-repeat"
+			className="max-w-9xl mx-auto flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:65%] bg-[50%_50%] bg-no-repeat"
 		>
 			<motion.div
 				initial='hidden'
