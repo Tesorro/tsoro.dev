@@ -41,7 +41,7 @@ export function TechCarousel() {
 			whileInView='show'
 			viewport={{ once: true, amount: 0.2 }}
 			variants={fromBottom}
-			className='relative mt-12 rounded-2xl bg-gray-300 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] dark:bg-gray-700'
+			className='relative mt-8 rounded-2xl bg-gray-300 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] xl:mt-12 dark:bg-gray-700'
 			aria-label='My skills'
 		>
 			<Carousel
@@ -52,7 +52,7 @@ export function TechCarousel() {
 					autoplay.current?.reset?.()
 					autoplay.current?.play?.()
 				}}
-				className='w-full px-2 py-3'
+				className='w-full px-2 py-1 xl:py-3'
 			>
 				<CarouselContent className='-ml-2'>
 					{longIcons.map((icon, i) => (
@@ -70,7 +70,7 @@ export function TechCarousel() {
 									alt={icon.alt}
 									width={64}
 									height={64}
-									className='h-18 w-auto object-contain'
+									className='h-12 w-auto object-contain xl:h-18'
 									loading='lazy'
 								/>
 							</div>

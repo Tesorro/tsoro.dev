@@ -12,7 +12,6 @@ export function SiteLogo({ size = 38, className = '' }: Props) {
 				size={size}
 				className={`text-primary ${className}`}
 			/>
-			<h1 className='text-primary text-3xl font-semibold'>tsoro.dev</h1>
 		</div>
 	)
 }

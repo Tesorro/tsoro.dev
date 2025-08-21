@@ -42,6 +42,9 @@
 	--container-8xl: 90rem; /* 1440px */
 	--container-9xl: 100rem; /* 1600px */
 	--container-10xl: 112.5rem; /* 1800px */
+
+	--breakpoint-xl2: 90rem;
+	--breakpoint-sm2: 30rem;
 }
 
 :root {
@@ -59,7 +62,7 @@
 	--secondary-foreground: oklch(0.208 0.042 265.755);
 
 	--destructive: oklch(0.577 0.245 27.325);
-	--border: oklch(0.929 0.013 255.508);
+	--border: oklch(0.8 0.02 250);
 
 	--muted: oklch(0.968 0.007 247.896);
 	--muted-foreground: oklch(0.554 0.046 257.417);
