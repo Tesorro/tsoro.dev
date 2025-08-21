@@ -23,7 +23,7 @@ export function Portfolio() {
 				whileInView='show'
 				viewport={{ once: true, amount: 0.2 }}
 				variants={fromBottom}
-				className='mb-5 flex flex-col items-center'
+				className='mb-5 flex flex-col items-center max-lg:mb-2'
 			>
 				<SectionHeading
 					title='Projects'

@@ -47,13 +47,13 @@ export function TechStack() {
 	)
 
 	return (
-		<section className="max-w-9xl mx-auto flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:112%] bg-[55%_55%] bg-no-repeat">
+		<section className="flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:112%] bg-[55%_55%] bg-no-repeat">
 			<motion.div
 				initial='hidden'
 				whileInView='show'
 				viewport={{ once: true, amount: 0.2 }}
 				variants={headingFromBottom}
-				className='mb-8 flex flex-col items-center'
+				className='mb-8 flex flex-col items-center max-lg:mb-4'
 			>
 				<SectionHeading
 					title='Tech Stack & Tools I Use'

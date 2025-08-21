@@ -22,7 +22,7 @@ const projects = {
 			'/images/projects/traceway/3.png',
 			'/images/projects/traceway/4.png'
 		],
-		techs: ['React', 'TypeScript', 'React Router', 'Formik', 'Styled Components']
+		techs: ['React', 'TypeScript', 'React Router', 'Formik', 'Sass', 'Styled Components']
 	},
 	discord: {
 		title: 'Discord Clone',
@@ -33,7 +33,7 @@ const projects = {
 			'/images/projects/discord/4.png'
 		],
 		techs: [
-			'React',
+			'NextJS',
 			'Zustand',
 			'TanStack React Query',
 			'Socket.io',
@@ -44,16 +44,27 @@ const projects = {
 			'LiveKit'
 		]
 	},
-	traceway2: {
-		title: 'TraceWay',
-		description: 'Система маркировки продукции для крупных компаний.',
+	datascan: {
+		title: 'DataScan',
+		description:
+			'Система обработки и хранения данных о движении лекарств по товаропроводящей сети.',
 		images: [
-			'/images/projects/traceway/1.png',
-			'/images/projects/traceway/2.png',
-			'/images/projects/traceway/3.png',
-			'/images/projects/traceway/4.png'
+			'/images/projects/datascan/1.png',
+			'/images/projects/datascan/2.png',
+			'/images/projects/datascan/3.png',
+			'/images/projects/datascan/4.png'
 		],
-		techs: ['React', 'TypeScript', 'React Router', 'Formik', 'Styled Components']
+		techs: ['React', 'TypeScript', 'React Router', 'React Highcharts', 'Sass', 'Styled Components']
+	},
+	'personal-site': {
+		title: 'Personal Site',
+		description: 'My website',
+		images: [
+			'/images/projects/personal-site/1.png',
+			'/images/projects/personal-site/2.png',
+			'/images/projects/personal-site/3.png'
+		],
+		techs: ['NextJS', 'TypeScript', 'Tailwind', 'Framer Motion']
 	}
 }
 
@@ -82,31 +93,31 @@ export function ProjectsCarousel() {
 		>
 			<Carousel
 				className='w-full'
-				opts={{ loop: true }}
+				opts={{ loop: true, align: 'start' }}
 			>
-				<CarouselContent className='px-2'>
-					{' '}
-					{/* фикс вместо -ml-2 */}
-					{Object.entries(projects).map(([key, { title, description, images, techs }]) => (
-						<motion.div
+				<CarouselContent className='-mr-1 -ml-1 pb-2'>
+					{Object.entries(projects).map(([key, p]) => (
+						<CarouselItem
 							key={key}
-							variants={cardVariants}
-							className='md:basis-1/2 lg:basis-1/3'
+							className='xl2:basis-1/3 basis-full pr-2 pl-2 lg:basis-1/2'
 						>
-							<div className='p-2'>
-								{' '}
-								{/* вместо p-1, чтобы компенсировать px-2 сверху */}
-								<Card className='group card-gradient border-grey relative overflow-hidden rounded-2xl bg-transparent p-5 transition-shadow duration-500 hover:shadow-lg'>
-									<ImageCarousel images={images} />
+							<motion.div
+								variants={cardVariants}
+								className='h-full'
+							>
+								<Card className='group card-gradient border-grey relative flex h-full flex-col overflow-hidden rounded-2xl bg-transparent p-5 transition-shadow duration-500 hover:shadow-lg'>
+									<ImageCarousel images={p.images} />
 
-									<CardHeader className='flex flex-col gap-6 px-0'>
-										<CardTitle className='text-3xl font-normal'>{title}</CardTitle>
-										<CardDescription className='text-base'>{description}</CardDescription>
+									<CardHeader className='flex min-h-[120px] flex-col gap-4 px-0 max-lg:min-h-20'>
+										<CardTitle className='text-3xl font-normal'>{p.title}</CardTitle>
+										<CardDescription className='line-clamp-2 text-base'>
+											{p.description}
+										</CardDescription>
 									</CardHeader>
 
-									<CardFooter className='px-0 pt-4'>
-										<ul className="text-accent flex flex-wrap items-center text-sm [&>li:not(:first-child)]:before:mx-2 [&>li:not(:first-child)]:before:opacity-60 [&>li:not(:first-child)]:before:content-['•']">
-											{techs.map(t => (
+									<CardFooter className='mt-auto px-0 pt-4'>
+										<ul className="dark:text-accent flex flex-wrap items-center text-sm [&>li:not(:first-child)]:before:mx-2 [&>li:not(:first-child)]:before:opacity-60 [&>li:not(:first-child)]:before:content-['•']">
+											{p.techs.map(t => (
 												<li
 													key={t}
 													className='text-base whitespace-nowrap'
@@ -117,13 +128,13 @@ export function ProjectsCarousel() {
 										</ul>
 									</CardFooter>
 								</Card>
-							</div>
-						</motion.div>
+							</motion.div>
+						</CarouselItem>
 					))}
 				</CarouselContent>
 
-				<CarouselPrevious />
-				<CarouselNext />
+				<CarouselPrevious className='top-1/2 -left-4 size-9 -translate-y-1/2 lg:size-10' />
+				<CarouselNext className='top-1/2 -right-4 size-9 -translate-y-1/2 lg:size-10' />
 			</Carousel>
 		</motion.div>
 	)

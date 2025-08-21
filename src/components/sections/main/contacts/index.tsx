@@ -38,7 +38,7 @@ export function Contacts() {
 
 	return (
 		<section
-			className="border-grey max-w-9xl mx-auto flex w-full flex-col gap-6 rounded-3xl bg-[url('/images/backgrounds/cta.png')] bg-center bg-top bg-no-repeat p-18"
+			className="border-grey max-w-9xl mx-auto flex w-full flex-col gap-6 rounded-3xl bg-[url('/images/backgrounds/cta.png')] bg-center bg-top bg-no-repeat p-6 xl:p-18"
 			id='contacts'
 		>
 			<motion.div

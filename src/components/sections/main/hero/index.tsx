@@ -65,7 +65,7 @@ export function Hero() {
 			initial='hidden'
 			whileInView='show'
 			viewport={{ once: true, amount: 0.35 }}
-			className='max-w-9xl mx-auto flex w-full flex-col gap-20 will-change-transform'
+			className='max-w-9xl mx-auto flex w-full flex-col gap-20 will-change-transform max-md:gap-10'
 			id='about'
 		>
 			<motion.div
@@ -74,11 +74,11 @@ export function Hero() {
 			>
 				<IconLabel text='Build Better Software, Seamlessly Together' />
 			</motion.div>
-			<div className='flex'>
+			<div className='flex gap-8 max-md:flex-col'>
 				<Typewriter
 					base={`Hi, I'm Zaur — a Full-Stack Engineer who builds`}
 					words={['thoughtful', 'scalable', 'impactful solutions for the web.']}
-					className='mx-auto w-[75%] max-w-full text-[4rem] leading-[1.25] font-light'
+					className='max-xl2:text-[50px] max-sm2:h-48 mx-auto w-[75%] max-w-full text-[4rem] leading-[1.25] font-light max-xl:text-[40px] max-md:h-33 max-md:w-[95%] max-md:text-4xl max-sm:h-38'
 				/>
 
 				<Tags
@@ -88,7 +88,7 @@ export function Hero() {
 			</div>
 			<motion.p
 				variants={fromBottom}
-				className='bg-muted mx-auto w-fit rounded-md px-4 py-1 text-lg text-emerald-400 dark:bg-[#FFFFFF1A]'
+				className='bg-muted mx-auto w-fit rounded-md px-4 py-1 text-lg text-emerald-400 max-md:text-base dark:bg-[#FFFFFF1A]'
 			>
 				const me = "Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js Dev"
 			</motion.p>

@@ -1,4 +1,8 @@
-interface Props {}
+import cn from 'clsx'
+
+interface Props {
+	className?: string
+}
 
 const linkBase =
 	'px-4 py-2 text-base transition-colors ' +
@@ -7,9 +11,9 @@ const linkBase =
 	// тёмная тема: foreground → hover primary
 	'dark:text-foreground dark:hover:text-primary'
 
-export function Navigation({}: Props) {
+export function Navigation({ className }: Props) {
 	return (
-		<nav>
+		<nav className={cn(className)}>
 			<ul className='flex gap-2'>
 				<li>
 					<a
