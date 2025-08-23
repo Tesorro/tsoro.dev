@@ -78,7 +78,7 @@ export function Hero() {
 				<Typewriter
 					base={`Hi, I'm Zaur — a Full-Stack Engineer who builds`}
 					words={['thoughtful', 'scalable', 'impactful solutions for the web.']}
-					className='max-xl2:text-[50px] max-sm2:h-48 mx-auto w-[75%] max-w-full text-[4rem] leading-[1.25] font-light max-xl:text-[40px] max-md:h-33 max-md:w-[95%] max-md:text-4xl max-sm:h-38'
+					className='max-xl2:text-[50px] max-sm2:h-48 mx-auto h-80 w-[75%] max-w-full text-[4rem] leading-[1.25] font-light max-xl:text-[40px] max-md:h-33 max-md:w-[95%] max-md:text-4xl max-sm:h-38'
 				/>
 
 				<Tags
