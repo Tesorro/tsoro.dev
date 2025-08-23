@@ -184,21 +184,41 @@ html {
 		pointer-events: none;
 	}
 
-	.polka::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		pointer-events: none;
-		background: linear-gradient(
-			to right,
-			color-mix(in oklab, var(--polka-bg) 10%, transparent) 0%,
-			color-mix(in oklab, var(--polka-bg) 85%, transparent) 20%,
-			var(--polka-bg) 50%,
-			color-mix(in oklab, var(--polka-bg) 85%, transparent) 80%,
-			color-mix(in oklab, var(--polka-bg) 10%, transparent) 100%
-		);
-	}
+        .polka::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                pointer-events: none;
+                background: linear-gradient(
+                        to right,
+                        color-mix(in oklab, var(--polka-bg) 10%, transparent) 0%,
+                        color-mix(in oklab, var(--polka-bg) 85%, transparent) 20%,
+                        var(--polka-bg) 50%,
+                        color-mix(in oklab, var(--polka-bg) 85%, transparent) 80%,
+                        color-mix(in oklab, var(--polka-bg) 10%, transparent) 100%
+                );
+        }
+
+        .preloader {
+                @apply fixed inset-0 flex items-center justify-center bg-black;
+        }
+
+        .wave {
+                color: #fff;
+                animation: wave 1.5s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+                0%,
+                60%,
+                100% {
+                        transform: translateY(0);
+                }
+                30% {
+                        transform: translateY(-10px);
+                }
+        }
 }
 
 @layer utilities {
