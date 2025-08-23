@@ -69,20 +69,15 @@ export function Header() {
 					prefersReduced ? { duration: 0 } : { type: 'tween', duration: 0.35, ease: 'easeOut' }
 				}
 			>
-				{/* relative — чтобы панель якорилась к низу хедера */}
 				<div className='max-w-9xl relative mx-auto flex h-full items-center justify-between px-40 max-lg:px-7'>
-					{/* слева — логотип */}
 					<SiteLogo />
 
-					{/* десктоп-меню */}
 					<div className='hidden md:block'>
 						<Navigation />
 					</div>
 
-					{/* справа — группа кнопок (тема + бургер) */}
 					<div className='flex items-center gap-2'>
 						<ModeToggle />
-						{/* бургер только на мобилке */}
 						<button
 							type='button'
 							aria-label='Open menu'
@@ -95,11 +90,9 @@ export function Header() {
 						</button>
 					</div>
 
-					{/* мобильная панель навигации */}
 					<AnimatePresence>
 						{open && (
 							<>
-								{/* клик по подложке закроет меню */}
 								<motion.button
 									aria-hidden
 									onClick={() => setOpen(false)}
