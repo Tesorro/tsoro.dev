@@ -1,5 +1,6 @@
-import cn from 'clsx'
 import { Zap } from 'lucide-react'
+
+import { cn } from '@/lib/utils'
 
 interface IconLabelProps {
 	text: string

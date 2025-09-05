@@ -1,4 +1,4 @@
-import cn from 'clsx'
+import { cn } from '@/lib/utils'
 
 interface ButtonLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 	children: React.ReactNode

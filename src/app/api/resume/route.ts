@@ -7,11 +7,11 @@ export async function GET(req: NextRequest) {
   const lang: 'ru' | 'en' = langParam === 'ru' ? 'ru' : 'en';
 
   const fileDir = path.join(process.cwd(), 'public', 'resume');
-  const fileName = lang === 'ru' ? 'zaur-resume-ru.pdf' : 'zaur-resume-en.pdf';
+  const fileName = lang === 'ru' ? 'tsoroev-zaur-resume-ru.pdf' : 'tsoroev-zaur-resume-en.pdf';
   const absPath = path.join(fileDir, fileName);
 
   const downloadName =
-    lang === 'ru' ? 'Заур_Цороев_Резюме_RU.pdf' : 'Zaur_Tsoroev_Resume_EN.pdf';
+    lang === 'ru' ? 'Заур_Цороев_Резюме.pdf' : 'Zaur_Tsoroev_Resume.pdf';
 
   const file = await fs.readFile(absPath);
   const encodedName = encodeURIComponent(downloadName).replace(/'/g, '%27');

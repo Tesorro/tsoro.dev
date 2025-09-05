@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 
 import { ButtonLink } from '@/components/shared/button-link'
 import { IconLabel } from '@/components/shared/icon-label'
+import ResumeButton from '@/components/shared/resume-button'
 
 import { Tags } from './components/tags'
 import { Typewriter } from './components/typewriter'
@@ -96,13 +97,7 @@ export function Hero() {
 				variants={fromBottom}
 				className='flex justify-center gap-4'
 			>
-				<ButtonLink
-					variant='secondary'
-					href='#'
-					download
-				>
-					Download Resume
-				</ButtonLink>
+				<ResumeButton />
 				<ButtonLink href='#portfolio'>View My Work</ButtonLink>
 			</motion.div>
 		</motion.section>

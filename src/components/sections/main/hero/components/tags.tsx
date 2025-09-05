@@ -1,10 +1,10 @@
 'use client'
 
-import cn from 'clsx'
 import { motion, useMotionValue, useReducedMotion, useTransform } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 
 import type { Tag } from '@/lib/data/types'
+import { cn } from '@/lib/utils'
 
 interface IProps {
 	elements: Tag[]

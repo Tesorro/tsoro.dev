@@ -1,6 +1,5 @@
 'use client'
 
-import cn from 'clsx'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -9,6 +8,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 
 import { Navigation } from './components/navigation'
 import { SiteLogo } from './components/site-logo'
+import { cn } from '@/lib/utils'
 
 const HEADER_BIG = 96 // h-24
 const HEADER_SMALL = 64 // h-16
