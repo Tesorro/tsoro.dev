@@ -13,8 +13,8 @@ type Props = {
 }
 
 export function Typewriter({
-	base,
-	words,
+	base = '',
+	words = [],
 	className,
 	typeDelay = 70,
 	deleteDelay = 50,

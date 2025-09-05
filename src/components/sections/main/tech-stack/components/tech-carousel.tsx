@@ -7,26 +7,10 @@ import { useMemo, useRef } from 'react'
 
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 
-type Icon = { src: string; alt: string }
+import type { IconDto } from '@/lib/api'
 
-const icons: Icon[] = [
-	{ src: '/images/techs/icons/docker.svg', alt: 'docker' },
-	{ src: '/images/techs/icons/formik.svg', alt: 'formik' },
-	{ src: '/images/techs/icons/html5.svg', alt: 'html5' },
-	{ src: '/images/techs/icons/js.svg', alt: 'js' },
-	{ src: '/images/techs/icons/nextjs.svg', alt: 'nextjs' },
-	{ src: '/images/techs/icons/react-router.svg', alt: 'router' },
-	{ src: '/images/techs/icons/react.svg', alt: 'react' },
-	{ src: '/images/techs/icons/redux-toolkit.svg', alt: 'toolkit' },
-	{ src: '/images/techs/icons/tailwindcss.svg', alt: 'tailwindcss' },
-	{ src: '/images/techs/icons/typescript.svg', alt: 'typescript' },
-	{ src: '/images/techs/icons/webpack.svg', alt: 'webpack' },
-	{ src: '/images/techs/icons/yup.svg', alt: 'yup' }
-]
-
-const longIcons = [...icons, ...icons]
-
-export function TechCarousel() {
+export function TechCarousel({ techsIcons }: { techsIcons: IconDto[] }) {
+	const longIcons = [...techsIcons, ...techsIcons]
 	const prefersReduced = useReducedMotion()
 	const fromBottom = {
 		hidden: { y: prefersReduced ? 0 : 40, opacity: prefersReduced ? 1 : 0 },

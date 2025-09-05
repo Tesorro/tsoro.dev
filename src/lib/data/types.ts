@@ -1,28 +1,34 @@
-export type Skill = {
+export interface Skill {
   name: string;
   level?: 'basic' | 'mid' | 'pro';
   years?: number;
 };
-export type Project = {
+export interface Project {
+  id: string;
   title: string;
   description: string;
-  tech: string[];
+  techs: Array<{ tech: { name: string } }>;
   repo?: string;
   demo?: string;
-  image?: string;
-  role?: string;
-  highlights?: string[];
+  images: string[];
 };
-export type Job = {
-  company: string;
-  role: string;
-  period: { from: string; to?: string };
-  stack: string[];
-  achievements: string[];
-};
-export type Tag = {
+export interface Tag {
   label: string;
   pos: string;
   scale?: string;
   dir?: 'left' | 'right' | 'top' | 'bottom'
+}
+export interface Job {
+  year: number
+  title: string
+  period: string
+  description: string
+  details?: {
+    projects?: Array<{
+      name: string
+      bullets: string[]
+    }>
+    stack?: string[]
+    achievements?: string[]
+  }
 }

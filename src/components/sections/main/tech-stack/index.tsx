@@ -7,8 +7,9 @@ import { IconLabel } from '@/components/shared/icon-label'
 import { SectionHeading } from '@/components/shared/section-heading'
 
 import { TechCarousel } from './components/tech-carousel'
+import type { IconDto } from '@/lib/api'
 
-export function TechStack() {
+export function TechStack({ techsIcons }: { techsIcons: IconDto[] }) {
 	const prefersReduced = useReducedMotion()
 
 	const headingFromBottom = {
@@ -97,7 +98,7 @@ export function TechStack() {
 					{ src: '/images/techs/postman.png', alt: 'Postman', label: 'Postman' }
 				]}
 			/>
-			<TechCarousel />
+			<TechCarousel techsIcons={techsIcons}/>
 		</section>
 	)
 }

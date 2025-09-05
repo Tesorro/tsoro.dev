@@ -1,5 +1,6 @@
 'use client'
 
+import type { IPortfolio } from '..'
 import { motion } from 'framer-motion'
 
 import { ImageCarousel } from '@/components/shared/image-carousel'
@@ -11,62 +12,6 @@ import {
 	CarouselNext,
 	CarouselPrevious
 } from '@/components/ui/carousel'
-
-const projects = {
-	traceway: {
-		title: 'TraceWay',
-		description: 'Система маркировки продукции для крупных компаний.',
-		images: [
-			'/images/projects/traceway/1.png',
-			'/images/projects/traceway/2.png',
-			'/images/projects/traceway/3.png',
-			'/images/projects/traceway/4.png'
-		],
-		techs: ['React', 'TypeScript', 'React Router', 'Formik', 'Sass', 'Styled Components']
-	},
-	discord: {
-		title: 'Discord Clone',
-		description: 'Клон Discord с чатом, звонками и стримингом.',
-		images: [
-			'/images/projects/discord/2.png',
-			'/images/projects/discord/3.png',
-			'/images/projects/discord/4.png'
-		],
-		techs: [
-			'NextJS',
-			'Zustand',
-			'TanStack React Query',
-			'Socket.io',
-			'ShadCn',
-			'Axios',
-			'React Hook Form',
-			'Zod',
-			'LiveKit'
-		]
-	},
-	datascan: {
-		title: 'DataScan',
-		description:
-			'Система обработки и хранения данных о движении лекарств по товаропроводящей сети.',
-		images: [
-			'/images/projects/datascan/1.png',
-			'/images/projects/datascan/2.png',
-			'/images/projects/datascan/3.png',
-			'/images/projects/datascan/4.png'
-		],
-		techs: ['React', 'TypeScript', 'React Router', 'React Highcharts', 'Sass', 'Styled Components']
-	},
-	'personal-site': {
-		title: 'Personal Site',
-		description: 'My website',
-		images: [
-			'/images/projects/personal-site/1.png',
-			'/images/projects/personal-site/2.png',
-			'/images/projects/personal-site/3.png'
-		],
-		techs: ['NextJS', 'TypeScript', 'Tailwind', 'Framer Motion']
-	}
-}
 
 const containerVariants = {
 	hidden: { opacity: 0 },
@@ -83,7 +28,7 @@ const cardVariants = {
 	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
 }
 
-export function ProjectsCarousel() {
+export function ProjectsCarousel({ projects }: IPortfolio) {
 	return (
 		<motion.div
 			variants={containerVariants}
@@ -110,21 +55,26 @@ export function ProjectsCarousel() {
 
 									<CardHeader className='flex min-h-[120px] flex-col gap-4 px-0 max-lg:min-h-20'>
 										<CardTitle className='text-3xl font-normal'>{p.title}</CardTitle>
-										<CardDescription className='line-clamp-2 text-base'>
+										<CardDescription
+											className='line-clamp-2 text-base'
+											title={p.description}
+										>
 											{p.description}
 										</CardDescription>
 									</CardHeader>
 
 									<CardFooter className='mt-auto px-0 pt-4'>
 										<ul className="dark:text-accent flex flex-wrap items-center text-sm [&>li:not(:first-child)]:before:mx-2 [&>li:not(:first-child)]:before:opacity-60 [&>li:not(:first-child)]:before:content-['•']">
-											{p.techs.map(t => (
-												<li
-													key={t}
-													className='text-base whitespace-nowrap'
-												>
-													{t}
-												</li>
-											))}
+											{p.techs.map(({ tech: { name } }) => {
+												return (
+													<li
+														key={name}
+														className='text-base whitespace-nowrap'
+													>
+														{name}
+													</li>
+												)
+											})}
 										</ul>
 									</CardFooter>
 								</Card>

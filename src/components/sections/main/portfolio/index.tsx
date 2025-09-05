@@ -5,8 +5,13 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { SectionHeading } from '@/components/shared/section-heading'
 
 import { ProjectsCarousel } from './components/projects-carousel'
+import type { Project } from '@/lib/data/types'
 
-export function Portfolio() {
+export interface IPortfolio {
+	projects: Project[]
+}
+
+export function Portfolio({ projects }: IPortfolio) {
 	const prefersReduced = useReducedMotion()
 
 	const fromBottom = {
@@ -30,7 +35,7 @@ export function Portfolio() {
 					subtitle='What I did instead of sleeping'
 				/>
 			</motion.div>
-			<ProjectsCarousel />
+			<ProjectsCarousel projects={projects} />
 		</section>
 	)
 }
