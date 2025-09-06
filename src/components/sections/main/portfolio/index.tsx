@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { cubicBezier, motion, useReducedMotion } from 'framer-motion'
 
 import { SectionHeading } from '@/components/shared/section-heading'
 
@@ -11,12 +11,14 @@ export interface IPortfolio {
 	projects: Project[]
 }
 
+const easeOut = cubicBezier(0.16, 1, 0.3, 1)
+
 export function Portfolio({ projects }: IPortfolio) {
 	const prefersReduced = useReducedMotion()
 
 	const fromBottom = {
 		hidden: { y: prefersReduced ? 0 : 40, opacity: prefersReduced ? 1 : 0 },
-		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: 'easeOut' } }
+		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: easeOut } }
 	}
 	return (
 		<section

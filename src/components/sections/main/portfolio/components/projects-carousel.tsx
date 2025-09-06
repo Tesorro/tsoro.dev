@@ -1,7 +1,7 @@
 'use client'
 
 import type { IPortfolio } from '..'
-import { motion } from 'framer-motion'
+import { cubicBezier, motion } from 'framer-motion'
 
 import { ImageCarousel } from '@/components/shared/image-carousel'
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -23,9 +23,11 @@ const containerVariants = {
 	}
 }
 
+const easeOut = cubicBezier(0.16, 1, 0.3, 1)
+
 const cardVariants = {
 	hidden: { opacity: 0, y: 40 },
-	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+	show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: easeOut } }
 }
 
 export function ProjectsCarousel({ projects }: IPortfolio) {

@@ -7,24 +7,27 @@ interface Props {
 }
 
 export function SiteLogo({ size = 70, className = '' }: Props) {
-	const lockingRef = React.useRef(false)
+	const lockingRef = React.useRef<boolean>(false)
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    if (lockingRef.current) return
-    lockingRef.current = true
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+		e.preventDefault()
+		if (lockingRef.current) return
+		lockingRef.current = true
 
-    const to = '/'
-    if (typeof window !== 'undefined') {
-      if (window.location.pathname === to) {
-        window.location.reload()
-      } else {
-        window.location.assign(to)
-      }
-    }
-  }
+		const to = '/'
+		if (window.location.pathname === to) {
+			window.location.reload()
+		} else {
+			window.location.assign(to)
+		}
+	}
 	return (
-		<a href="/" onClick={handleClick} aria-label="Go to Home">
+		<Link
+			href='/'
+			prefetch={false}
+			onClick={handleClick}
+			aria-label='Go to Home'
+		>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				width={size}
@@ -53,6 +56,6 @@ export function SiteLogo({ size = 70, className = '' }: Props) {
 					d='M406.329 172.162C401.741 168.493 372.132 152.282 387.264 146.103C391.356 145.448 394.551 148.975 397.532 151.262L405.994 157.658C419.278 167.667 429.061 169.371 412.257 181.888C405.703 186.771 398.494 191.57 392.451 196.992C385.748 199.512 380.184 192.878 384.649 188.096C386.87 185.719 389.948 183.897 392.592 182L406.329 172.162Z'
 				/>
 			</svg>
-		</a>
+		</Link>
 	)
 }

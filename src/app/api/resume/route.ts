@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   const file = await fs.readFile(absPath);
   const encodedName = encodeURIComponent(downloadName).replace(/'/g, '%27');
 
-  return new NextResponse(file, {
+  return new NextResponse(new Uint8Array(file), {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Disposition':

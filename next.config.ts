@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next';
 import path from 'path';
+import bundleAnalyzer from '@next/bundle-analyzer';
 
 const nextConfig: NextConfig = {
   sassOptions: {
@@ -9,7 +10,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 60, 
+    minimumCacheTTL: 60,
     dangerouslyAllowSVG: false,
   },
   webpack(config) {
@@ -30,4 +31,6 @@ const nextConfig: NextConfig = {
   // }
 };
 
-export default nextConfig;
+const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })
+
+export default withBundleAnalyzer(nextConfig);

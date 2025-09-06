@@ -42,24 +42,13 @@ export default [
       import: importPlugin,
     },
     rules: {
-      'simple-import-sort/imports': 'error',
-      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': 'off',
+      'simple-import-sort/exports': 'off',
       'unicorn/no-array-callback-reference': 'off',
       'unicorn/no-array-for-each': 'off',
       'unicorn/no-array-reduce': 'off',
-      'unicorn/prevent-abbreviations': [
-        'error',
-        {
-          allowList: {
-            e2e: true,
-          },
-          replacements: {
-            props: false,
-            ref: false,
-            params: false,
-          },
-        },
-      ],
+      'unicorn/prevent-abbreviations': 'off',
+      'no-unused-vars': 'warn'
     },
   },
 

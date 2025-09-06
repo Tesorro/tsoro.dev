@@ -1,7 +1,7 @@
 'use client'
 
 import Autoplay from 'embla-carousel-autoplay'
-import { motion, useReducedMotion } from 'framer-motion'
+import { cubicBezier, motion, useReducedMotion } from 'framer-motion'
 import Image from 'next/image'
 import { useMemo, useRef } from 'react'
 
@@ -9,12 +9,14 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 
 import type { IconDto } from '@/lib/api'
 
+const easeOut = cubicBezier(0.16, 1, 0.3, 1)
+
 export function TechCarousel({ techsIcons }: { techsIcons: IconDto[] }) {
 	const longIcons = [...techsIcons, ...techsIcons]
 	const prefersReduced = useReducedMotion()
 	const fromBottom = {
 		hidden: { y: prefersReduced ? 0 : 40, opacity: prefersReduced ? 1 : 0 },
-		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: 'easeOut' } }
+		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: easeOut } }
 	}
 	const autoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false }))
 	const plugins = useMemo(() => (prefersReduced ? [] : [autoplay.current]), [prefersReduced])

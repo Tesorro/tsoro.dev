@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { cubicBezier, motion, useReducedMotion } from 'framer-motion'
 
 import { ExpandGallery } from '@/components/shared/expand-gallery'
 import { IconLabel } from '@/components/shared/icon-label'
@@ -9,17 +9,19 @@ import { SectionHeading } from '@/components/shared/section-heading'
 import { TechCarousel } from './components/tech-carousel'
 import type { IconDto } from '@/lib/api'
 
+const easeOut = cubicBezier(0.16, 1, 0.3, 1)
+
 export function TechStack({ techsIcons }: { techsIcons: IconDto[] }) {
 	const prefersReduced = useReducedMotion()
 
 	const headingFromBottom = {
 		hidden: { y: prefersReduced ? 0 : 40, opacity: prefersReduced ? 1 : 0 },
-		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: 'easeOut' } }
+		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: easeOut } }
 	}
 
 	const rowFromRight = {
 		hidden: { x: prefersReduced ? 0 : 80, opacity: prefersReduced ? 1 : 0 },
-		show: { x: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: 'easeOut' } }
+		show: { x: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: easeOut } }
 	}
 
 	const Row = ({

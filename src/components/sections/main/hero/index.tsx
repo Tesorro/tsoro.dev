@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { cubicBezier, motion, useReducedMotion } from 'framer-motion'
 
 import { ButtonLink } from '@/components/shared/button-link'
 import { IconLabel } from '@/components/shared/icon-label'
@@ -49,11 +49,13 @@ const techs: Tag[] = [
 	}
 ]
 
+const easeOut = cubicBezier(0.16, 1, 0.3, 1)
+
 export function Hero() {
 	const prefersReduced = useReducedMotion()
 	const fromBottom = {
 		hidden: { y: prefersReduced ? 0 : 40, opacity: prefersReduced ? 1 : 0 },
-		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: 'easeOut' } }
+		show: { y: 0, opacity: 1, transition: { duration: prefersReduced ? 0 : 0.6, ease: easeOut } }
 	}
 	const container = {
 		hidden: {},
@@ -91,7 +93,7 @@ export function Hero() {
 				variants={fromBottom}
 				className='bg-muted mx-auto w-fit rounded-md px-4 py-1 text-lg text-emerald-400 max-md:text-base dark:bg-[#FFFFFF1A]'
 			>
-				const me = "Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js Dev"
+				const me = &quot;Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js Dev&quot;
 			</motion.p>
 			<motion.div
 				variants={fromBottom}
