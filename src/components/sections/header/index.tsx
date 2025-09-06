@@ -10,15 +10,14 @@ import { Navigation } from './components/navigation'
 import { SiteLogo } from './components/site-logo'
 import { cn } from '@/lib/utils'
 
-const HEADER_BIG = 96 // h-24
-const HEADER_SMALL = 64 // h-16
+const HEADER_BIG = 96
+const HEADER_SMALL = 64
 
 export function Header() {
 	const [scrolled, setScrolled] = useState(false)
 	const [open, setOpen] = useState(false)
 	const prefersReduced = useReducedMotion()
 
-	// shrink-on-scroll
 	useEffect(() => {
 		const ENTER = 24,
 			EXIT = 8
@@ -37,7 +36,6 @@ export function Header() {
 		return () => window.removeEventListener('scroll', onScroll)
 	}, [])
 
-	// закрывать меню при ресайзе на десктоп
 	useEffect(() => {
 		const mq = window.matchMedia('(min-width: 768px)')
 		const close = () => mq.matches && setOpen(false)
@@ -45,7 +43,6 @@ export function Header() {
 		return () => mq.removeEventListener?.('change', close)
 	}, [])
 
-	// опционально: не скроллить боди при открытом меню
 	useEffect(() => {
 		if (open) document.body.style.overflow = 'hidden'
 		else document.body.style.overflow = ''
@@ -134,7 +131,6 @@ export function Header() {
 				</div>
 			</motion.header>
 
-			{/* spacer под хедер */}
 			<div
 				aria-hidden
 				className='h-24'

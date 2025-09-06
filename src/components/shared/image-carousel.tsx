@@ -10,9 +10,10 @@ import { Carousel, type CarouselApi, CarouselContent, CarouselItem } from '@/com
 
 interface IProps {
 	images: string[]
+	title: string
 }
 
-export function ImageCarousel({ images }: IProps) {
+export function ImageCarousel({ images, title }: IProps) {
 	const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null)
 	const [currentIndex, setCurrentIndex] = useState(0)
 	const [totalItems, setTotalItems] = useState(0)
@@ -30,7 +31,7 @@ export function ImageCarousel({ images }: IProps) {
 		carouselApi.on('select', updateCarouselState)
 
 		return () => {
-			carouselApi.off('select', updateCarouselState) // Clean up on unmount
+			carouselApi.off('select', updateCarouselState)
 		}
 	}, [carouselApi])
 
@@ -51,7 +52,7 @@ export function ImageCarousel({ images }: IProps) {
 							<Card className='border-none bg-transparent'>
 								<CardContent className='flex h-80 items-center justify-center overflow-hidden rounded-lg px-0'>
 									<Image
-										alt={''} // TODO: Добавить alt
+										alt={title}
 										src={src}
 										width={480}
 										height={320}

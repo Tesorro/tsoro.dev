@@ -100,7 +100,7 @@ export function TechStack({ techsIcons }: { techsIcons: IconDto[] }) {
 					{ src: '/images/techs/postman.png', alt: 'Postman', label: 'Postman' }
 				]}
 			/>
-			<TechCarousel techsIcons={techsIcons}/>
+			<TechCarousel techsIcons={techsIcons} />
 		</section>
 	)
 }

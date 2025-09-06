@@ -93,7 +93,8 @@ export function Hero() {
 				variants={fromBottom}
 				className='bg-muted mx-auto w-fit rounded-md px-4 py-1 text-lg text-emerald-400 max-md:text-base dark:bg-[#FFFFFF1A]'
 			>
-				const me = &quot;Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js Dev&quot;
+				const me = &quot;Full-stack Engineer | JavaScript Enthusiast | React(Next.js) & Node.js
+				Dev&quot;
 			</motion.p>
 			<motion.div
 				variants={fromBottom}

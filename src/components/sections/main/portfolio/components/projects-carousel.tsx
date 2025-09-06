@@ -31,6 +31,8 @@ const cardVariants = {
 }
 
 export function ProjectsCarousel({ projects }: IPortfolio) {
+	console.log('projects', projects)
+
 	return (
 		<motion.div
 			variants={containerVariants}
@@ -53,7 +55,10 @@ export function ProjectsCarousel({ projects }: IPortfolio) {
 								className='h-full'
 							>
 								<Card className='group card-gradient border-grey relative flex h-full flex-col overflow-hidden rounded-2xl bg-transparent p-5 transition-shadow duration-500 hover:shadow-lg'>
-									<ImageCarousel images={p.images} />
+									<ImageCarousel
+										images={p.images}
+										title={p.title}
+									/>
 
 									<CardHeader className='flex min-h-[120px] flex-col gap-4 px-0 max-lg:min-h-20'>
 										<CardTitle className='text-3xl font-normal'>{p.title}</CardTitle>

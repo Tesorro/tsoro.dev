@@ -6,9 +6,7 @@ interface Props {
 
 const linkBase =
 	'px-4 py-2 text-base transition-colors ' +
-	// светлая тема: обычный foreground → hover #4c51bf
 	'text-foreground hover:text-[#4c51bf] ' +
-	// тёмная тема: foreground → hover primary
 	'dark:text-foreground dark:hover:text-primary'
 
 export function Navigation({ className }: Props) {

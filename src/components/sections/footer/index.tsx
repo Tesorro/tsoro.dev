@@ -1,10 +1,9 @@
 export function Footer() {
-  const year = new Date().getFullYear()
+	const year = new Date().getFullYear()
 
-  return (
-    <footer className="py-6 text-center text-sm text-muted-foreground">
-      © Zaurbek Tsoroev, {year}
-    </footer>
-  )
+	return (
+		<footer className='text-muted-foreground py-6 text-center text-sm'>
+			© Zaurbek Tsoroev, {year}
+		</footer>
+	)
 }
-
