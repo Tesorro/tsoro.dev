@@ -45,7 +45,7 @@ export default function ResumeButton() {
 				>
 					<DropdownMenuItem asChild>
 						<a
-							href='/api/resume?lang=en'
+							href='/resume?lang=en'
 							rel='nofollow'
 							onClick={() => trackResumeDownload('en')}
 						>
@@ -55,7 +55,7 @@ export default function ResumeButton() {
 
 					<DropdownMenuItem asChild>
 						<a
-							href='/api/resume?lang=ru'
+							href='/resume?lang=ru'
 							rel='nofollow'
 							onClick={() => trackResumeDownload('ru')}
 						>
