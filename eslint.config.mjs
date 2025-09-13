@@ -59,7 +59,7 @@ export default [
 		}
 	},
 	{
-		ignores: [".next/", "node_modules/", "src/generated/**, src/lib/prisma.ts"],
+		ignores: [".next/", "node_modules/", "src/generated/**", "src/lib/prisma.ts"],
 	},
 
 	prettierConfig
