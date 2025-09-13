@@ -12,7 +12,6 @@ interface IProps {
 	year: number
 	title: string
 	description: string
-	/** необязательные поля для раскрытия */
 	period?: string
 	projects?: ProjectBlock[]
 	stack?: string[]
@@ -69,7 +68,6 @@ export function CareerCard({
 					</CardFooter>
 				)}
 
-				{/* Раскрывающийся блок */}
 				<AnimatePresence initial={false}>
 					{open && hasDetails && (
 						<motion.div

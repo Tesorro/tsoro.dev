@@ -1,5 +1,3 @@
-'use client'
-
 import type { IPortfolio } from '..'
 import { cubicBezier, motion } from 'framer-motion'
 
@@ -31,8 +29,6 @@ const cardVariants = {
 }
 
 export function ProjectsCarousel({ projects }: IPortfolio) {
-	console.log('projects', projects)
-
 	return (
 		<motion.div
 			variants={containerVariants}

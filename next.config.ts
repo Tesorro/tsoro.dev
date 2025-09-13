@@ -21,14 +21,6 @@ const nextConfig: NextConfig = {
 		})
 		return config
 	}
-	// async rewrites() {
-	//   return [
-	//     {
-	//       source: '/uploads/:path*',
-	//       destination: `${process.env.SERVER_URL}/uploads/:path*`
-	//     }
-	//   ]
-	// }
 }
 
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })

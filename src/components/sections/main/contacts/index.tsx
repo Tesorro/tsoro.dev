@@ -56,7 +56,6 @@ export function Contacts() {
 				/>
 			</motion.div>
 
-			{/* Иконки */}
 			<motion.ul
 				initial='hidden'
 				whileInView='show'

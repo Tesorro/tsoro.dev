@@ -12,7 +12,6 @@ export type IconDto = { src: string; alt: string }
 export async function fetchTechIcons(): Promise<IconDto[]> {
 	const base = process.env.NEXT_PUBLIC_API_URL
 	const res = await fetch(`${base}/api/v1/techs/carousel`, {
-		// кэширование на минуту (SSR/сервер-компоненты)
 		next: { revalidate: 60 }
 	})
 	if (!res.ok) throw new Error('Failed to load icons')
