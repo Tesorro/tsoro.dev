@@ -58,6 +58,9 @@ export default [
 			'unicorn/prefer-module': 'off'
 		}
 	},
+	{
+		ignores: [".next/", "node_modules/", "src/generated/**, src/lib/prisma.ts"],
+	},
 
 	prettierConfig
 ]
