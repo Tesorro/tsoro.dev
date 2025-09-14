@@ -6,7 +6,7 @@ interface Props {
 	className?: string
 }
 
-export function SiteLogo({ size = 70, className = '' }: Props) {
+export function SiteLogo({ size = 60, className = '' }: Props) {
 	const lockingRef = React.useRef<boolean>(false)
 
 	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -32,7 +32,7 @@ export function SiteLogo({ size = 70, className = '' }: Props) {
 				xmlns='http://www.w3.org/2000/svg'
 				width={size}
 				height={size}
-				viewBox='0 0 1024 1024'
+				viewBox='116 116 792 792'
 				className={` ${className} dark:fill-foreground fill-[#4c51be]`}
 			>
 				<path

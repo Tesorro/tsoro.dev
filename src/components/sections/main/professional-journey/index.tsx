@@ -116,7 +116,7 @@ export function ProfessionalJourney() {
 	return (
 		<section
 			id='career'
-			className='max-w-9xl mx-auto flex w-full flex-col gap-6'
+			className='relative max-w-9xl mx-auto flex w-full flex-col gap-6 overflow-x-clip'
 		>
 			<motion.div
 				initial='hidden'
@@ -140,7 +140,7 @@ export function ProfessionalJourney() {
 						amount: 0.25
 					}}
 					variants={fromRight}
-					className='will-change-transform'
+					className='will-change-transform max-w-full overflow-x-clip'
 				>
 					<CareerCard
 						year={job.year}
