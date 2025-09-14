@@ -12,7 +12,7 @@ export function ExpandGallery({ items }: { items: Item[] }) {
 
 	return (
 		<div
-			className='flex gap-4 rounded-3xl bg-transparent'
+			className='flex max-w-full gap-4 overflow-x-clip rounded-3xl bg-transparent'
 			onMouseLeave={() => setActive(0)}
 			role='list'
 			aria-label='Technology gallery'

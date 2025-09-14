@@ -39,7 +39,7 @@ export function TechStack({ techsIcons }: { techsIcons: IconDto[] }) {
 				amount: 0.25
 			}}
 			variants={rowFromRight}
-			className='will-change-transform'
+			className='will-change-transform max-w-full overflow-x-clip'
 		>
 			<IconLabel
 				text={label}
@@ -50,7 +50,7 @@ export function TechStack({ techsIcons }: { techsIcons: IconDto[] }) {
 	)
 
 	return (
-		<section className="flex w-full flex-col gap-6 bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:112%] bg-[55%_55%] bg-no-repeat">
+		<section className="relative flex w-full flex-col gap-6 overflow-x-clip bg-[url('/images/backgrounds/Vector-10-1.png')] bg-[length:112%] bg-[55%_55%] bg-no-repeat">
 			<motion.div
 				initial='hidden'
 				whileInView='show'

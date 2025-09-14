@@ -133,7 +133,7 @@ export function Header() {
 
 			<div
 				aria-hidden
-				className='h-24'
+				className='max-w-9xl h-24'
 			/>
 		</>
 	)
