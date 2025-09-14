@@ -77,7 +77,7 @@ export function Hero() {
 			>
 				<IconLabel text='Build Better Software, Seamlessly Together' />
 			</motion.div>
-			<div className='flex gap-8 max-[390px]:gap-20 max-md:flex-col'>
+			<div className='flex gap-8 max-[389px]:gap-20 max-md:flex-col'>
 				<Typewriter
 					base={`Hi, I'm Zaur — a Full-Stack Engineer who builds`}
 					words={['thoughtful', 'scalable', 'impactful solutions for the web.']}
@@ -98,7 +98,7 @@ export function Hero() {
 			</motion.p>
 			<motion.div
 				variants={fromBottom}
-				className='flex justify-center gap-4 max-[390px]:flex-col max-[390px]:items-center'
+				className='flex justify-center gap-4 max-[389px]:flex-col max-[389px]:items-center'
 			>
 				<ResumeButton />
 				<ButtonLink href='#portfolio'>View My Work</ButtonLink>
